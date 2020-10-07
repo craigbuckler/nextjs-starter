@@ -1,2 +1,54 @@
-# nextjs-starter
-An example website and blog developed using Next.js.
+# Next.js starter
+
+An example site which uses [Next.js](https://nextjs.org/) as a complete build system.
+
+The following Next.js features are demonstrated:
+
+* basic page creation
+* static generation (render at build time)
+* server-side rendering (render at request time)
+* client-side hydration
+* markdown content and front-matter
+* custom React components
+* pages and article posts
+* article indexes
+* development and build processes such as hot reloading
+
+
+## Installation
+
+Ensure Node.js v10 or above is installed, clone the repository, and install all modules:
+
+```sh
+git clone https://github.com/craigbuckler/nextjs-starter.git
+cd nextjs-starter
+npm i
+```
+
+
+## Development mode build
+
+Launch the Next.js build server:
+
+```sh
+npm run dev
+```
+
+(or `npx next dev`)
+
+Navigate to <http://localhost:3000> in your browser.
+
+
+## Production mode build
+
+Run the Next.js build process:
+
+```sh
+npm run build
+```
+
+(or `npx next build`)
+
+Then test with `npm run start` or `npx next start`.
+
+The files generated in the `.next` folder can be uploaded to any web host with Node.js support.
