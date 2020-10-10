@@ -5,13 +5,12 @@ An example site which uses [Next.js](https://nextjs.org/) as a complete build sy
 The following Next.js features are demonstrated:
 
 * basic page creation
+* dynamic routes generated from markdown posts
+* article indexes
 * static generation (render at build time)
 * server-side rendering (render at request time)
 * client-side hydration
-* markdown content and front-matter
 * custom React components
-* pages and article posts
-* article indexes
 * development and build processes such as hot reloading
 
 

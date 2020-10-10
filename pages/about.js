@@ -17,7 +17,7 @@ export default function About({ data }) {
 
       <h2>A random { data.type } joke</h2>
       <p className="setup">{ data.setup }...</p>
-      <p className="punchline">{ data.punchline }!</p>
+      <p className="punchline">{ data.punchline }</p>
 
       <style jsx>{`
         .setup { font-weight: bold; }

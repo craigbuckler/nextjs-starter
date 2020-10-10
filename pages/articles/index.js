@@ -1,7 +1,9 @@
-import { getAllPosts } from '../../lib/posts'
+import { getAllFiles } from '../../lib/posts-md';
 import Layout from '../../components/layout';
 import Pagelink from '../../components/pagelink';
-import Head from 'next/head'
+import Head from 'next/head';
+
+const postsDir = 'articles';
 
 export default function ArticleIndex({ postData }) {
 
@@ -21,7 +23,7 @@ export default function ArticleIndex({ postData }) {
         { postData.map(post => (
           <Pagelink
             key={ post.id }
-            type="articles"
+            postsdir={ postsDir }
             id={ post.id }
             title={ post.title }
             description={ post.description }
@@ -39,11 +41,12 @@ export default function ArticleIndex({ postData }) {
 }
 
 
+// fetch array of all article posts
 export async function getStaticProps() {
 
   return {
     props: {
-      postData: await getAllPosts('articles')
+      postData: await getAllFiles(postsDir)
     }
   }
 

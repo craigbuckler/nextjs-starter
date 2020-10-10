@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Pagelink(props) {
 
-  const link = `/${ props.type }/${ props.id }`;
+  const link = `/${ props.postsdir }/${ props.id }`;
 
   return (
 

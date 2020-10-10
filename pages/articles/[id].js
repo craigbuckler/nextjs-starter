@@ -1,6 +1,6 @@
-import { getPostIds, getPostData } from '../../lib/posts'
+import { getFileIds, getFileData } from '../../lib/posts-md'
 import Layout from '../../components/layout';
-import Head from 'next/head'
+import Head from 'next/head';
 
 export default function Article({ postData }) {
 
@@ -30,19 +30,30 @@ export default function Article({ postData }) {
 }
 
 
+// post configuration
+const postsDir = 'articles';
+
 // dynamic route IDs
 export async function getStaticPaths() {
+
+  const
+    paths = (await getFileIds(postsDir))
+      .map(id => { return { params: { id } }; });
+
   return {
-    paths: await getPostIds('articles'),
+    paths,
     fallback: false
   }
+
 }
 
 // dynamic route content
 export async function getStaticProps({ params }) {
+
   return {
     props: {
-      postData: await getPostData('articles', params.id)
+      postData: await getFileData(postsDir, params.id)
     }
   }
+
 }
